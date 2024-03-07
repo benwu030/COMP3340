@@ -5,6 +5,9 @@ img_norm_cfg = dict(
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='RandomResizedCrop', size=224),
+    #for alexnet
+    # dict(type='RandomResizedCrop', size=227),
+
     dict(type='RandomFlip', flip_prob=0.5, direction='horizontal'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='ImageToTensor', keys=['img']),
@@ -15,11 +18,15 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='Resize', size=(256, -1)),
     dict(type='CenterCrop', crop_size=224),
+    #for alexnet
+    # dict(type='CenterCrop', crop_size=227),
+
     dict(type='Normalize', **img_norm_cfg),
     dict(type='ImageToTensor', keys=['img']),
     dict(type='Collect', keys=['img'])
 ]
 data = dict(
+    #samples_per_gpu*workers_per_gpu = total batch size
     samples_per_gpu=32,
     workers_per_gpu=1,
     train=dict(
@@ -35,7 +42,7 @@ data = dict(
     test=dict(
         # replace `data/val` with `data/test` for standard test
         type=dataset_type,
-        data_prefix='data/flowers/val',
-        ann_file='data/flowers/meta/val.txt',
+        data_prefix='data/flowers/test',
+        ann_file='data/flowers/meta/test.txt',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='accuracy')
