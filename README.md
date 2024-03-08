@@ -1,6 +1,7 @@
 # Project
 
-##TODO:
+## TODO:
+
 **Midterm Report**:
 Aim: improve accuracy with following method:
 
@@ -12,7 +13,8 @@ Aim: improve accuracy with following method:
 **Final Report & Presentation**:
 Find other models / ways to improve the model / compare de-facto model to classical model (like yolo?)
 
-###Set-up for this project
+### Set-up for this project
+
 The following way is only applicaple with HKU GPU Farm (run the command one by one):
 conda create -n mmcls python=3.7 -y
 conda activate mmcls
@@ -23,7 +25,8 @@ cd CNN_Image_Classification_Code
 pip install -e .
 pip install yapf\==0.40.1
 
-###Training the network
+### raining the network
+
 Run the following command, default output will be located in `/output/{network}`
 
 ```bash
@@ -32,7 +35,8 @@ bash trainResnet.sh
 bash trainVGG.sh
 ```
 
-###Plot Graph
+### Plot Graph
+
 Modify analyze_logs.py
 Command examples:
 
