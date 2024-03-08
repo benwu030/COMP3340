@@ -5,7 +5,7 @@ model = dict(
     head=dict(
         type='ClsHead',
         loss=dict(type='CrossEntropyLoss', loss_weight=1.0),
-        topk=(1, 5)))
+        topk=(1, )))
 dataset_type = 'Flowers'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -86,11 +86,11 @@ data = dict(
             dict(type='ImageToTensor', keys=['img']),
             dict(type='Collect', keys=['img'])
         ]))
-evaluation = dict(interval=1, metric='accuracy')
-optimizer = dict(type='SGD', lr=0.0001, momentum=0.9, weight_decay=1e-12)
+evaluation = dict(interval=1, metric='accuracy', metric_options=dict(topk=1))
+optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=1e-06)
 optimizer_config = dict(grad_clip=None)
-lr_config = dict(policy='step', step=[50, 100])
-runner = dict(type='EpochBasedRunner', max_epochs=10)
+lr_config = dict(policy='step', step=[])
+runner = dict(type='EpochBasedRunner', max_epochs=100)
 checkpoint_config = dict(interval=1)
 log_config = dict(
     interval=38,

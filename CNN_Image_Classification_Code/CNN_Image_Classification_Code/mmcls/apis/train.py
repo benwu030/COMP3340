@@ -10,6 +10,7 @@ from mmcv.runner import DistSamplerSeedHook, build_optimizer, build_runner
 from mmcls.core import DistOptimizerHook
 from mmcls.datasets import build_dataloader, build_dataset
 from mmcls.utils import get_root_logger
+from .traningAccuracyHook import TrainingAccuracyHook
 
 # TODO import eval hooks from mmcv and delete them from mmcls
 try:
@@ -137,6 +138,19 @@ def train_model(model,
         custom_hooks_config=cfg.get('custom_hooks', None))
     if distributed:
         runner.register_hook(DistSamplerSeedHook())
+    # register Training Accuracy Hook
+    # train_dataset = build_dataset(cfg.data.train)
+    # train_dataloader = build_dataloader(
+    #     train_dataset,
+    #     samples_per_gpu=cfg.data.samples_per_gpu,
+    #     workers_per_gpu=cfg.data.workers_per_gpu,
+    #     dist=distributed,
+    #     shuffle=False,
+    #     round_up=True)
+    # eval_cfg = cfg.get('evaluation', {})
+    # eval_cfg['by_epoch'] = cfg.runner['type'] != 'IterBasedRunner'
+    # eval_hook = TrainingAccuracyHook
+    # runner.register_hook(eval_hook(train_dataloader, **eval_cfg))
 
     # register eval hooks
     if validate:

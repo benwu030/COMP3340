@@ -71,7 +71,7 @@ class BaseClassifier(BaseModule, metaclass=ABCMeta):
                 raise TypeError(f'{name} must be a list, but got {type(var)}')
 
         if len(imgs) == 1:
-            return self.simple_test(imgs[0], **kwargs)
+            return self.simple_test(imgs[0],**kwargs)
         else:
             raise NotImplementedError('aug_test has not been implemented')
 
@@ -145,7 +145,6 @@ class BaseClassifier(BaseModule, metaclass=ABCMeta):
         """
         losses = self(**data)
         loss, log_vars = self._parse_losses(losses)
-
         outputs = dict(
             loss=loss, log_vars=log_vars, num_samples=len(data['img'].data))
 

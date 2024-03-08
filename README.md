@@ -4,18 +4,27 @@
 
 **Midterm Report**:
 Aim: improve accuracy with following method:
+http://cs231n.stanford.edu/slides/2021/lecture_8.pdf
+![alt text](image-1.png)
+![alt text](image-2.png)
 
 1. Data augumentation
 2. Hyper Parameter Tuning - batch size, learning rate & weight_decay, optimizer (SGD vs Adam), learning policy
 3. Calulate the FLOPs (could use get_flops.py in ./tools)
 4. Write the report
+5. Split the data in to train,val,test? now only have train and val.
 
 **Final Report & Presentation**:
+
+http://cs231n.stanford.edu/slides/2021/lecture_7.pdf![alt text](image.png)
+Transfer learning ( apply pretrained model to network and compare the result)
 Find other models / ways to improve the model / compare de-facto model to classical model (like yolo?)
 
 ### Set-up for this project
 
 The following way is only applicaple with HKU GPU Farm (run the command one by one):
+
+```
 conda create -n mmcls python=3.7 -y
 conda activate mmcls
 conda install pytorch\==1.7.1 torchvision\==0.8.2 torchaudio\==0.7.2 cudatoolkit=10.1 -c pytorch
@@ -24,8 +33,9 @@ pip install mmcv-full\==1.5.0
 cd CNN_Image_Classification_Code
 pip install -e .
 pip install yapf\==0.40.1
+```
 
-### raining the network
+### Training the network
 
 Run the following command, default output will be located in `/output/{network}`
 
@@ -37,7 +47,7 @@ bash trainVGG.sh
 
 ### Plot Graph
 
-Modify analyze_logs.py
+Modify analyze_logs.py  
 Command examples:
 
 ```bash

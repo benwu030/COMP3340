@@ -8,6 +8,6 @@ model = dict(
 head=dict(
         type='ClsHead',
         loss=dict(type='CrossEntropyLoss', loss_weight=1.0),
-        topk=(1, 5)
+        topk=(1,)
     )
     )

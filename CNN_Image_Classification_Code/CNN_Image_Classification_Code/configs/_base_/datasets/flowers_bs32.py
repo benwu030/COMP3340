@@ -45,4 +45,5 @@ data = dict(
         data_prefix='data/flowers/test',
         ann_file='data/flowers/meta/test.txt',
         pipeline=test_pipeline))
-evaluation = dict(interval=1, metric='accuracy')
+evaluation = dict(interval=1, metric='accuracy',metric_options={'topk': 1})
+
