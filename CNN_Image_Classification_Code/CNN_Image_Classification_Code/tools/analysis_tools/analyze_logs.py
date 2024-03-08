@@ -57,7 +57,7 @@ def plot_curve(log_dicts, args):
                     f'{args.json_logs[i]} does not contain metric {metric} '
                     f'in train mode')
 
-            if 'mAP' in metric:
+            else:
                 xs = np.arange(1, max(epochs) + 1)
                 ys = []
                 for epoch in epochs:
@@ -65,23 +65,27 @@ def plot_curve(log_dicts, args):
                 ax = plt.gca()
                 ax.set_xticks(xs)
                 plt.xlabel('epoch')
-                plt.plot(xs, ys, label=legend[i * num_metrics + j], marker='o')
-            else:
-                xs = []
-                ys = []
-                num_iters_per_epoch = log_dict[epochs[0]]['iter'][-1]
-                for epoch in epochs:
-                    iters = log_dict[epoch]['iter']
-                    if log_dict[epoch]['mode'][-1] == 'val':
-                        iters = iters[:-1]
-                    xs.append(
-                        np.array(iters) + (epoch - 1) * num_iters_per_epoch)
-                    ys.append(np.array(log_dict[epoch][metric][:len(iters)]))
-                xs = np.concatenate(xs)
-                ys = np.concatenate(ys)
-                plt.xlabel('iter')
-                plt.plot(
-                    xs, ys, label=legend[i * num_metrics + j], linewidth=0.5)
+                plt.ylabel(metric)
+                plt.plot(xs, ys, label=legend[i * num_metrics + j], linewidth=0.5, marker='o')
+            # else:
+            #     xs = []
+            #     ys = []
+            #     num_iters_per_epoch = log_dict[epochs[0]]['iter'][-1]
+            #     print(log_dict[epochs[0]])
+            #     for epoch in epochs:
+            #         iters = log_dict[epoch]['iter']
+            #         if log_dict[epoch]['mode'][-1] == 'val':
+            #             iters = iters[:-1]
+            #         xs.append(np.array(iters) + (epoch - 1) * num_iters_per_epoch)
+            #         print(np.array(iters) + (epoch - 1) * num_iters_per_epoch)
+            #         #xs.append([epoch])
+            #         ys.append(np.array(log_dict[epoch][metric][:len(iters)]))
+            #     xs = np.concatenate(xs)
+            #     ys = np.concatenate(ys)
+            #     plt.xlabel('iterations')
+            #     plt.ylabel(metric)
+            #     plt.plot(xs, ys, label=legend[i * num_metrics + j], linewidth=0.5, marker='o')
+
             plt.legend()
         if args.title is not None:
             plt.title(args.title)
@@ -152,6 +156,7 @@ def load_json_logs(json_logs):
     # keys of sub dict is different metrics, e.g. memory, bbox_mAP
     # value of sub dict is a list of corresponding values of all iterations
     log_dicts = [dict() for _ in json_logs]
+    print(json_logs)
     for json_log, log_dict in zip(json_logs, log_dicts):
         with open(json_log, 'r') as log_file:
             for line in log_file:

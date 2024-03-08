@@ -1,0 +1,9 @@
+python tools/analysis_tools/analyze_logs.py plot_curve ./output/alexnet/20240308_171954.log.json  ./output/alexnet/20240308_172216.log.json ./output/alexnet/20240308_172433.log.json ./output/alexnet/20240308_172651.log.json --keys accuracy_top-1 --legend lr=0.1 lr=0.01 lr=0.001 lr=0.0001 --title 'AlexNet in 10 Epochs'
+
+python tools/analysis_tools/analyze_logs.py plot_curve ./output/resnet18/20240308_172015.log.json  ./output/resnet18/20240308_172219.log.json ./output/resnet18/20240308_172420.log.json ./output/resnet18/20240308_172621.log.json --keys accuracy_top-1 --legend lr=0.1 lr=0.01 lr=0.001 lr=0.0001 --title 'ResNet18 in 10 Epochs'
+
+python tools/analysis_tools/analyze_logs.py plot_curve ./output/resnet50/20240308_172822.log.json  ./output/resnet50/20240308_173027.log.json ./output/resnet50/20240308_173234.log.json ./output/resnet50/20240308_173441.log.json --keys accuracy_top-1 --legend lr=0.1 lr=0.01 lr=0.001 lr=0.0001 --title 'ResNet50 in 10 Epochs'
+
+python tools/analysis_tools/analyze_logs.py plot_curve ./output/resnet101/20240308_173647.log.json  ./output/resnet101/20240308_173911.log.json ./output/resnet101/20240308_174135.log.json ./output/resnet101/20240308_174359.log.json --keys accuracy_top-1 --legend lr=0.1 lr=0.01 lr=0.001 lr=0.0001 --title 'ResNet101 in 10 Epochs'
+
+python tools/analysis_tools/analyze_logs.py plot_curve ./output/resnet152/20240308_174622.log.json  ./output/resnet152/20240308_181431.log.json ./output/resnet152/20240308_174937.log.json ./output/resnet152/20240308_175245.log.json --keys accuracy_top-1 --legend lr=0.1 lr=0.01 lr=0.001 lr=0.0001 --title 'ResNet152 in 10 Epochs'

@@ -1,7 +1,7 @@
 # model settings
 model = dict(
     type='ImageClassifier',
-    backbone=dict(type='VGG', depth=13, num_classes=1000),
+    backbone=dict(type='VGG', depth=13, num_classes=17),
     neck=None,
     head=dict(
         type='ClsHead',
