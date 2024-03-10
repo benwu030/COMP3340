@@ -63,7 +63,7 @@ def plot_curve(log_dicts, args):
                 for epoch in epochs:
                     ys += log_dict[epoch][metric]
                 ax = plt.gca()
-                ax.set_xticks(xs)
+                #ax.set_xticks(xs)
                 plt.xlabel('epoch')
                 plt.ylabel(metric)
                 plt.plot(xs, ys, label=legend[i * num_metrics + j], linewidth=0.5, marker='o')
