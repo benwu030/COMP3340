@@ -17,13 +17,12 @@ class TrainingAccuracyHook(Hook):
         self.eval_kwargs = eval_kwargs
         self.by_epoch = by_epoch
         print(dataloader)
+    # def __init__(self, model):
+    #     self.model = model
 
-    def after_epoch(self, runner):
-        if not self.by_epoch or not self.every_n_epochs(runner, self.interval):
-            return
-        from mmcls.apis import single_gpu_test
-        results = single_gpu_test(runner.model, self.dataloader, show=False)
-        self.evaluate(runner, results)
+    # def after_epoch(self, runner):
+    #     runner.model.evaluate()        
+        
         
 
     def after_iter(self, runner):
@@ -40,3 +39,5 @@ class TrainingAccuracyHook(Hook):
             runner.log_buffer.output[name] = val
         runner.log_buffer.ready = True
         
+
+    

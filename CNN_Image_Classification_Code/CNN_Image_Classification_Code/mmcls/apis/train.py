@@ -116,7 +116,9 @@ def train_model(model,
             meta=meta))
 
     # an ugly walkaround to make the .log and .log.json filenames the same
-    runner.timestamp = timestamp
+    filename = cfg.work_dir.split("/")[-1]
+    runner.timestamp = f"{filename}_{timestamp}"
+    
 
     # fp16 setting
     fp16_cfg = cfg.get('fp16', None)
@@ -150,7 +152,7 @@ def train_model(model,
     # eval_cfg = cfg.get('evaluation', {})
     # eval_cfg['by_epoch'] = cfg.runner['type'] != 'IterBasedRunner'
     # eval_hook = TrainingAccuracyHook
-    # runner.register_hook(eval_hook(train_dataloader, **eval_cfg))
+    # runner.register_hook(eval_hook(runner.model))
 
     # register eval hooks
     if validate:

@@ -126,7 +126,8 @@ def main():
     timestamp = time.strftime('%Y%m%d_%H%M%S', time.localtime())
 
     ##log_file name
-    log_file = osp.join(cfg.work_dir, f'{timestamp}.log')
+    filename = cfg.work_dir.split("/")[-1]
+    log_file = osp.join(cfg.work_dir, f'{filename}_{timestamp}.log')
     logger = get_root_logger(log_file=log_file, log_level=cfg.log_level)
 
     # init the meta dict to record some important information such as
