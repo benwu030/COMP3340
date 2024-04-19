@@ -1,26 +1,6 @@
 # Project
 
-## TODO:
-
-**Midterm Report**:
-Aim: improve accuracy with following method:
-http://cs231n.stanford.edu/slides/2021/lecture_8.pdf
-![alt text](image-1.png)
-![alt text](image-2.png)
-
-1. Data augumentation
-2. Hyper Parameter Tuning - batch size, learning rate & weight_decay, optimizer (SGD vs Adam), learning policy
-3. Calulate the FLOPs (could use get_flops.py in ./tools)
-4. Write the report
-5. Split the data in to train,val,test? now only have train and val.
-
-**Final Report & Presentation**:
-
-http://cs231n.stanford.edu/slides/2021/lecture_7.pdf![alt text](image.png)
-Transfer learning ( apply pretrained model to network and compare the result)
-Find other models / ways to improve the model / compare de-facto model to classical model (like yolo?)
-
-### Set-up for this project
+### 1.Set-up for this project
 
 The following way is only applicaple with HKU GPU Farm (run the command one by one):
 
@@ -35,7 +15,21 @@ pip install -e .
 pip install yapf\==0.40.1
 ```
 
-### Training the network
+### 2.Download the dataset
+```
+wget https://www.robots.ox.ac.uk/~vgg/data/flowers/17/17flowers.tgz
+tar zxvf 17flowers.tgz
+mkdir data
+mv 17flowers data/flowers
+```
+
+### 3.Split the data
+```
+python data/flowers/split.py
+python data/flowers/generate_meta.py
+```
+
+### 4.Training the network
 
 Run the following command, default output will be located in `/output/{network}`
 
@@ -43,6 +37,7 @@ Run the following command, default output will be located in `/output/{network}`
 bash trainAlexnet.sh
 bash trainResnet.sh
 bash trainVGG.sh
+bash trainResnet18_trainResnetPretrained.sh
 ```
 
 ### Plot Graph
