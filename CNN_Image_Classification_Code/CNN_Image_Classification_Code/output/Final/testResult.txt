@@ -1,0 +1,4 @@
+python tools/analysis_tools/eval_metric.py 'configs/project/resnet18_flowers_pretrained.py' 'output/resnet18_pretrained/test.pkl' --metrics accuracy
+/home/benwu/anaconda3/envs/mmcls2/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:33: UserWarning: Fail to import ``MultiScaleDeformableAttention`` from ``mmcv.ops.multi_scale_deform_attn``, You should install ``mmcv-full`` if you need this module. 
+  warnings.warn('Fail to import ``MultiScaleDeformableAttention`` from '
+{'accuracy': 93.38235294117646}

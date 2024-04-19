@@ -1,0 +1,121 @@
+python tools/analysis_tools/get_flops.py 'configs/project/resnet18_flowers_pretrained.py' 
+/home/benwu/anaconda3/envs/mmcls2/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:33: UserWarning: Fail to import ``MultiScaleDeformableAttention`` from ``mmcv.ops.multi_scale_deform_attn``, You should install ``mmcv-full`` if you need this module. 
+  warnings.warn('Fail to import ``MultiScaleDeformableAttention`` from '
+ImageClassifier(
+  11.185 M, 100.000% Params, 1.822 GFLOPs, 100.000% FLOPs,
+  (backbone): ResNet(
+    11.177 M, 99.922% Params, 1.822 GFLOPs, 99.999% FLOPs,
+    (conv1): Conv2d(0.009 M, 0.084% Params, 0.118 GFLOPs, 6.478% FLOPs, 3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (bn1): BatchNorm2d(0.0 M, 0.001% Params, 0.002 GFLOPs, 0.088% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.044% FLOPs, inplace=True)
+    (maxpool): MaxPool2d(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.044% FLOPs, kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): ResLayer(
+      0.148 M, 1.323% Params, 0.465 GFLOPs, 25.517% FLOPs,
+      (0): BasicBlock(
+        0.074 M, 0.661% Params, 0.232 GFLOPs, 12.758% FLOPs,
+        (conv1): Conv2d(0.037 M, 0.330% Params, 0.116 GFLOPs, 6.346% FLOPs, 64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.0 M, 0.001% Params, 0.0 GFLOPs, 0.022% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(0.037 M, 0.330% Params, 0.116 GFLOPs, 6.346% FLOPs, 64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.0 M, 0.001% Params, 0.0 GFLOPs, 0.022% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.022% FLOPs, inplace=True)
+      )
+      (1): BasicBlock(
+        0.074 M, 0.661% Params, 0.232 GFLOPs, 12.758% FLOPs,
+        (conv1): Conv2d(0.037 M, 0.330% Params, 0.116 GFLOPs, 6.346% FLOPs, 64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.0 M, 0.001% Params, 0.0 GFLOPs, 0.022% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(0.037 M, 0.330% Params, 0.116 GFLOPs, 6.346% FLOPs, 64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.0 M, 0.001% Params, 0.0 GFLOPs, 0.022% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.022% FLOPs, inplace=True)
+      )
+    )
+    (layer2): ResLayer(
+      0.526 M, 4.699% Params, 0.412 GFLOPs, 22.641% FLOPs,
+      (0): BasicBlock(
+        0.23 M, 2.058% Params, 0.181 GFLOPs, 9.916% FLOPs,
+        (conv1): Conv2d(0.074 M, 0.659% Params, 0.058 GFLOPs, 3.173% FLOPs, 64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.0 M, 0.002% Params, 0.0 GFLOPs, 0.011% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(0.147 M, 1.318% Params, 0.116 GFLOPs, 6.346% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.0 M, 0.002% Params, 0.0 GFLOPs, 0.011% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.011% FLOPs, inplace=True)
+        (downsample): Sequential(
+          0.008 M, 0.076% Params, 0.007 GFLOPs, 0.364% FLOPs,
+          (0): Conv2d(0.008 M, 0.073% Params, 0.006 GFLOPs, 0.353% FLOPs, 64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(0.0 M, 0.002% Params, 0.0 GFLOPs, 0.011% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        0.295 M, 2.641% Params, 0.232 GFLOPs, 12.725% FLOPs,
+        (conv1): Conv2d(0.147 M, 1.318% Params, 0.116 GFLOPs, 6.346% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.0 M, 0.002% Params, 0.0 GFLOPs, 0.011% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(0.147 M, 1.318% Params, 0.116 GFLOPs, 6.346% FLOPs, 128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.0 M, 0.002% Params, 0.0 GFLOPs, 0.011% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.011% FLOPs, inplace=True)
+      )
+    )
+    (layer3): ResLayer(
+      2.1 M, 18.772% Params, 0.412 GFLOPs, 22.603% FLOPs,
+      (0): BasicBlock(
+        0.919 M, 8.217% Params, 0.18 GFLOPs, 9.894% FLOPs,
+        (conv1): Conv2d(0.295 M, 2.637% Params, 0.058 GFLOPs, 3.173% FLOPs, 128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.001 M, 0.005% Params, 0.0 GFLOPs, 0.006% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(0.59 M, 5.273% Params, 0.116 GFLOPs, 6.346% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.001 M, 0.005% Params, 0.0 GFLOPs, 0.006% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.006% FLOPs, inplace=True)
+        (downsample): Sequential(
+          0.033 M, 0.298% Params, 0.007 GFLOPs, 0.358% FLOPs,
+          (0): Conv2d(0.033 M, 0.293% Params, 0.006 GFLOPs, 0.353% FLOPs, 128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(0.001 M, 0.005% Params, 0.0 GFLOPs, 0.006% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        1.181 M, 10.556% Params, 0.232 GFLOPs, 12.709% FLOPs,
+        (conv1): Conv2d(0.59 M, 5.273% Params, 0.116 GFLOPs, 6.346% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.001 M, 0.005% Params, 0.0 GFLOPs, 0.006% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(0.59 M, 5.273% Params, 0.116 GFLOPs, 6.346% FLOPs, 256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.001 M, 0.005% Params, 0.0 GFLOPs, 0.006% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.006% FLOPs, inplace=True)
+      )
+    )
+    (layer4): ResLayer(
+      8.394 M, 75.043% Params, 0.411 GFLOPs, 22.583% FLOPs,
+      (0): BasicBlock(
+        3.673 M, 32.839% Params, 0.18 GFLOPs, 9.883% FLOPs,
+        (conv1): Conv2d(1.18 M, 10.546% Params, 0.058 GFLOPs, 3.173% FLOPs, 256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.001 M, 0.009% Params, 0.0 GFLOPs, 0.003% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(2.359 M, 21.093% Params, 0.116 GFLOPs, 6.346% FLOPs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.001 M, 0.009% Params, 0.0 GFLOPs, 0.003% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.003% FLOPs, inplace=True)
+        (downsample): Sequential(
+          0.132 M, 1.181% Params, 0.006 GFLOPs, 0.355% FLOPs,
+          (0): Conv2d(0.131 M, 1.172% Params, 0.006 GFLOPs, 0.353% FLOPs, 256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(0.001 M, 0.009% Params, 0.0 GFLOPs, 0.003% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        4.721 M, 42.204% Params, 0.231 GFLOPs, 12.701% FLOPs,
+        (conv1): Conv2d(2.359 M, 21.093% Params, 0.116 GFLOPs, 6.346% FLOPs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(0.001 M, 0.009% Params, 0.0 GFLOPs, 0.003% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(2.359 M, 21.093% Params, 0.116 GFLOPs, 6.346% FLOPs, 512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(0.001 M, 0.009% Params, 0.0 GFLOPs, 0.003% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.003% FLOPs, inplace=True)
+      )
+    )
+  )
+  init_cfg={'type': 'Pretrained', 'checkpoint': 'https://download.openmmlab.com/mmclassification/v0/resnet/resnet18_batch256_imagenet_20200708-34ab8f90.pth'}
+  (neck): GlobalAveragePooling(
+    0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs,
+    (gap): AdaptiveAvgPool2d(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, output_size=(1, 1))
+  )
+  (head): LinearClsHead(
+    0.009 M, 0.078% Params, 0.0 GFLOPs, 0.000% FLOPs,
+    (compute_loss): CrossEntropyLoss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+    (compute_accuracy): Accuracy(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+    (fc): Linear(0.009 M, 0.078% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=512, out_features=17, bias=True)
+  )
+  init_cfg={'type': 'Normal', 'layer': 'Linear', 'std': 0.01}
+)
+==============================
+Input shape: (3, 224, 224)
+Flops: 1.82 GFLOPs
+Params: 11.19 M
+==============================
