@@ -1,10 +1,22 @@
 # Project
 
 ## Final Model
-Our Final Model attained maximum validation accuracy of **95.58824** and testing accuracy **93.3823**:
+Our Final Model attained maximum validation accuracy of **95.58824** and testing accuracy **93.3823**.
+
 | BackBone | Pretrained with | Optimizer | Batch Size | Learning Rate | Epochs |
 |:--------:|:---------------:|:---------:|:----------:|:-------------:|:------:|
 | ResNet 18     |  ILSVRC 2012 dataset | SGD | 4 | 0.001| 150|
+
+Test the model with
+```
+python tools/test.py --config 'configs/project/resnet18_flowers_pretrained.py' --checkpoint 'output/Final/epoch_150.pth' --out 'output/Final/finalresult.json'
+python demo/image_demo.py --img 'demo/tigerlily.jpg' --config 'configs/project/resnet18_flowers_pretrained.py' --checkpoint 'output/Final/epoch_150.pth'
+
+```
+
+### Example output
+![image](https://github.com/benwu030/COMP3340/assets/78753601/4d2752d1-e13e-4a15-9ac6-8bb56c6045cd)
+
 
 ## Flops of the model:
 
@@ -31,7 +43,7 @@ pip install yapf\==0.40.1
 ```
 
 ### 2.Download the dataset
-make sure your current directory is inside CNN_Image_Classification_Code
+make sure your current directory is inside CNN_Image_Classification_Code/CNN_Image_Classification_Code
 ```
 wget https://www.robots.ox.ac.uk/~vgg/data/flowers/17/17flowers.tgz
 tar zxvf 17flowers.tgz
@@ -39,13 +51,14 @@ mv  -v jpg/* data/flowers
 ```
 
 ### 3.Split the data
-make sure your current directory /data/flowers
+make sure your current directory is /data/flowers
 ```
 python data/flowers/split.py
 python data/flowers/generate_meta.py
 ```
 
 ### 4.Training the network
+make sure your current directory is COMP3340 or where the training bash is located
 
 Run the following command, default output will be located in `/output/{network}`
 
@@ -55,6 +68,17 @@ bash trainResnet.sh
 bash trainVGG.sh
 bash trainResnetPretrained.sh
 ```
+### 5. Testing the model
+
+```
+python tools/test.py --config{config location} --checkpoint{your trained epoch } --out{output file .json/.pkl}
+```
+E.g.
+```
+python tools/test.py --config 'configs/project/resnet18_flowers_pretrained.py' --checkpoint 'output/Final/epoch_150.pth' --out 'output/Final/finalresult.json'
+python tools/analysis_tools/eval_metric.py 'configs/project/resnet18_flowers_pretrained.py' 'output/Final/finalresult.json' --metrics accuracy
+```
+
 
 ### Plot Graph
 
