@@ -1,0 +1,25 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: ../datasets/oxford17  # dataset root dir
+train: images/train  # train images (relative to 'path') 128 images
+val: images/val  # val images (relative to 'path') 128 images
+test:  # test images (optional)
+
+# Classes (80 COCO classes)
+names:
+  0: Bluebell
+  1: Buttercup
+  2: Coltsfoot
+  3: Cowslip
+  4: Crocus
+  5: Daffodil
+  6: Daisy
+  7: Dandelion
+  8: Fritillary
+  9: Iris
+  10: Lilyvalley
+  11: Pansy
+  12: Snowdrop
+  13: Sunflower
+  14: Tigerlily
+  15: Tulip
+  16: Windflower
