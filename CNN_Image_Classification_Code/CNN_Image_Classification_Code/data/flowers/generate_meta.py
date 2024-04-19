@@ -1,5 +1,5 @@
 import os,pdb
-
+os.makedirs("meta", exist_ok=True)
 f = open('meta/train.txt', 'w')
 
 classes = os.listdir('train')
