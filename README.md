@@ -31,14 +31,15 @@ pip install yapf\==0.40.1
 ```
 
 ### 2.Download the dataset
+make sure your current directory is inside CNN_Image_Classification_Code
 ```
 wget https://www.robots.ox.ac.uk/~vgg/data/flowers/17/17flowers.tgz
 tar zxvf 17flowers.tgz
-mkdir data
-mv 17flowers data/flowers
+mv  -v jpg/* data/flowers
 ```
 
 ### 3.Split the data
+make sure your current directory /data/flowers
 ```
 python data/flowers/split.py
 python data/flowers/generate_meta.py
@@ -52,7 +53,7 @@ Run the following command, default output will be located in `/output/{network}`
 bash trainAlexnet.sh
 bash trainResnet.sh
 bash trainVGG.sh
-bash trainResnet18_trainResnetPretrained.sh
+bash trainResnetPretrained.sh
 ```
 
 ### Plot Graph
