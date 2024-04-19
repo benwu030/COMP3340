@@ -1,5 +1,20 @@
 # Project
 
+## Final Model
+Our Final Model attained maximum validation accuracy of **95.58824** and testing accuracy **93.3823**:
+| BackBone | Pretrained with | Optimizer | Batch Size | Learning Rate | Epochs |
+|:--------:|:---------------:|:---------:|:----------:|:-------------:|:------:|
+| ResNet 18     |  ILSVRC 2012 dataset | SGD | 4 | 0.001| 150|
+
+## Flops of the model:
+
+Input shape: (3, 224, 224) 
+
+Flops: 1.82 GFLOPs
+
+Params: 11.19 M
+
+## Steps to Train the model
 ### 1.Set-up for this project
 
 The following way is only applicaple with HKU GPU Farm (run the command one by one):
