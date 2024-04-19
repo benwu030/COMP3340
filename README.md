@@ -108,3 +108,12 @@ Refer to `YOLO_Oxford_dataset/convert.py`
 
 ### Training
 Refer to `yolov5s_oxford_training.ipynb`
+
+### Results
+The final model and converted dataset can be downloaded from: https://github.com/benwu030/COMP3340/releases/tag/yolo
+
+![results](https://github.com/benwu030/COMP3340/assets/38398443/4fc364f2-95bc-49fb-a339-6a70e94b9e0d)
+![val_batch0_pred](https://github.com/benwu030/COMP3340/assets/38398443/3dc7e096-260c-4cee-8cfe-5dbd56f1ec8b)
+![confusion_matrix](https://github.com/benwu030/COMP3340/assets/38398443/2c63bd41-fca5-4ad0-afc5-d53ad2f763d5)
+
+
