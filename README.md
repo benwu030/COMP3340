@@ -29,8 +29,9 @@ Params: 11.19 M
 ## Steps to Train the model
 ### 1.Set-up for this project
 
-The following way is only applicaple with HKU GPU Farm (run the command one by one):
+The following way is only applicaple with HKU GPU Farm / linux (run the command one by one):
 
+P.S. For Windows WSL2, please install the corresponding cudatoolkit following the instructions in https://docs.nvidia.com/cuda/wsl-user-guide/index.html
 ```
 conda create -n mmcls python=3.7 -y
 conda activate mmcls
